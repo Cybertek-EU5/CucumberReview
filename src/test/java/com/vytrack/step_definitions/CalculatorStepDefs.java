@@ -13,15 +13,15 @@ public class CalculatorStepDefs {
     }
 
     @When("I add {int} to {int}")
-    public void i_add_to(Integer int1, Integer int2) {
+    public void i_add_to(Integer num1, Integer num2) {
         // Write code here that turns the phrase above into concrete actions
-        System.out.println("Running step : I add two numbers");
+        System.out.println("Running step : I add " + num1 + " to " + num2);
     }
 
     @Then("I should get {int}")
-    public void i_should_get(Integer int1) {
+    public void i_should_get(Integer expected) {
         // Write code here that turns the phrase above into concrete actions
-        System.out.println("Running step : Verifying the result");
+        System.out.println("Running step : Verifying the sum should be " + expected);
     }
 
 
