@@ -21,8 +21,8 @@ import org.junit.runner.RunWith;
                 dryRun = false ,   // check if we have missing steps or not
                 plugin = {"json:target/cucumber.json" ,
                            "html:target/default-html-reports"
-                        } //,
-                //tags = "@navigation and not @calculator"   // "@login"  // which feature you want to run
+                        } ,
+                tags = "@wip and not @calculator"   // "@login"  // which feature you want to run
                 )
 
 public class CukesRunner {
