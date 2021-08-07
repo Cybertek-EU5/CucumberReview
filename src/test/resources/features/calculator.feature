@@ -1,3 +1,4 @@
+@calculator
 Feature: Calculator app should be able to calculation
 
   Scenario: Adding two numbers 5 with 7

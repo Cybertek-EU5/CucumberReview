@@ -38,4 +38,14 @@ public class LoginStepDef {
 
 
     }
+
+    @When("the user enters the {string} and {string}")
+    public void theUserEntersTheAnd(String username, String password) {
+
+
+        LoginPage loginPage = new LoginPage() ;
+        loginPage.login(username, password);
+
+
+    }
 }

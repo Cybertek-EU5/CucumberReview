@@ -13,11 +13,14 @@ import org.junit.runner.RunWith;
  * where is the code that match the steps in cucumber  | glue = " step definitions folder path here"
  * whether to run the actual code or just to check if you have missing steps  | dryRun = true/false
  * what kind of report you want to get and other options | plugins = ....
+ * which scenarios or features you want to run | tars = "@something and @somethingelse not @blabla
  */
 
-@CucumberOptions(features = "src/test/resources/features" ,
-                glue = "com/vytrack/step_definitions")
-
+@CucumberOptions(features = "src/test/resources/features" ,  // tell location of future file
+                glue = "com/vytrack/step_definitions", // tell where the code is
+                dryRun = false ,   // check if we have missing steps or not
+                tags = "not @calculator"   // "@login"  // which feature you want to run
+                )
 
 public class CukesRunner {
 }
