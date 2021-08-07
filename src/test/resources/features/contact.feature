@@ -1,6 +1,6 @@
 Feature: Contacts page
 
-  @wip
+#  @wip
   Scenario: Menu Options Driver
     Given the user is on the login page
     When the user logged in as "driver"
@@ -10,7 +10,7 @@ Feature: Contacts page
       | Activities |
       | System     |
 
-    @wip
+#    @wip
     Scenario: login as a given user
       Given the user is on the login page
       When the user logs in using following credentials
