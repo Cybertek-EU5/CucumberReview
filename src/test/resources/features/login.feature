@@ -6,6 +6,7 @@ Feature: User should be able to login to Vytrack App
     When the user enters the driver information
     Then the user should be able to login
 
+    @salesmanager
   Scenario: User should be able to login
     Given the user is on the login page
     When the user enters the "salesmanager101" and "UserUser123"
