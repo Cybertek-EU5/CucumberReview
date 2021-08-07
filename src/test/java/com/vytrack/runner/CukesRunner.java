@@ -15,6 +15,9 @@ import org.junit.runner.RunWith;
  * what kind of report you want to get and other options | plugins = ....
  */
 
-@CucumberOptions(features = "src/test/resources/features")
+@CucumberOptions(features = "src/test/resources/features" ,
+                glue = "com/vytrack/step_definitions")
+
+
 public class CukesRunner {
 }
