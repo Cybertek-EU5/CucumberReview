@@ -10,3 +10,9 @@ Feature: User should be able to login to Vytrack App
     Given the user is on the login page
     When the user enters the "salesmanager101" and "UserUser123"
     Then the user should be able to login
+
+            #homework
+  Scenario: login as a user
+    Given the user is on the login page
+    When the user logged in as "storeManager"
+    Then the user should be able to login
