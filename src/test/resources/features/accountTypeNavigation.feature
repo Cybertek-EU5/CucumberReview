@@ -13,16 +13,17 @@ Examples:
   | driver        | Customers  | Contacts        | Contacts - Customers                                               |
   | driver        | Activities | Calendar Events | Calendar Events - Activities                                       |
   | driver        | System     | Jobs            | Jobs - System                                                      |
-  | sales manager | Fleet      | Vehicles        | All - Car - Entities - System - Car - Entities - System            |
-  | sales manager | Fleet      | Vehicles Model  | All - Vehicles Model - Entities - System - Car - Entities - System |
-  | sales manager | Customers  | Accounts        | All - Accounts - Customers                                         |
-  | sales manager | Customers  | Contacts        | All - Contacts - Customers                                         |
-  | sales manager | Activities | Calendar Events | All - Calendar Events - Activities                                 |
-  | sales manager | System     | Jobs            | All - Jobs - System                                                |
-  | store manager | Fleet      | Vehicles        | All - Car - Entities - System - Car - Entities - System            |
-  | store manager | Fleet      | Vehicles Model  | All - Vehicles Model - Entities - System - Car - Entities - System |
-  | store manager | Customers  | Accounts        | All - Accounts - Customers                                         |
-  | store manager | Customers  | Contacts        | All - Contacts - Customers                                         |
-  | store manager | Activities | Calendar Events | All - Calendar Events - Activities                                 |
-  | store manager | System     | Jobs            | All - Jobs - System                                                |
-  | store manager | System     | Menus           | All - Menus - System                                               |
+  | userType     | tabName    | moduleName      | title                                                              |
+  | salesManager | Fleet      | Vehicles        | All - Car - Entities - System - Car - Entities - System            |
+  | salesManager | Fleet      | Vehicles Model  | All - Vehicles Model - Entities - System - Car - Entities - System |
+  | salesManager | Customers  | Accounts        | All - Accounts - Customers                                         |
+  | salesManager | Customers  | Contacts        | All - Contacts - Customers                                         |
+  | salesManager | Activities | Calendar Events | All - Calendar Events - Activities                                 |
+  | salesManager | System     | Jobs            | All - Jobs - System                                                |
+  | storeManager | Fleet      | Vehicles        | All - Car - Entities - System - Car - Entities - System            |
+  | storeManager | Fleet      | Vehicles Model  | All - Vehicles Model - Entities - System - Car - Entities - System |
+  | storeManager | Customers  | Accounts        | All - Accounts - Customers                                         |
+  | storeManager | Customers  | Contacts        | All - Contacts - Customers                                         |
+  | storeManager | Activities | Calendar Events | All - Calendar Events - Activities                                 |
+  | storeManager | System     | Jobs            | All - Jobs - System                                                |
+  | storeManager | System     | Menus           | All - Menus - System                                               |
