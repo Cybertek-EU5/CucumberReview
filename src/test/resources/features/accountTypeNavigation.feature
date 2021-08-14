@@ -13,7 +13,6 @@ Examples:
   | driver        | Customers  | Contacts        | Contacts - Customers                                               |
   | driver        | Activities | Calendar Events | Calendar Events - Activities                                       |
   | driver        | System     | Jobs            | Jobs - System                                                      |
-  | userType     | tabName    | moduleName      | title                                                              |
   | salesManager | Fleet      | Vehicles        | All - Car - Entities - System - Car - Entities - System            |
   | salesManager | Fleet      | Vehicles Model  | All - Vehicles Model - Entities - System - Car - Entities - System |
   | salesManager | Customers  | Accounts        | All - Accounts - Customers                                         |
