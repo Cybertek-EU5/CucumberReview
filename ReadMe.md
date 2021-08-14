@@ -197,8 +197,8 @@ Follow instruction to create account just like facebook
    1. Specify project location
    2. Specify run internal using cron expression
    3. Add Build Step to run maven goal
-      1. **`clean verify -Dcucumber.filter.tags=@`**
+      1. **`clean verify`**
       2. add optional cucumber options if needed like
-         - `-Dcucumber.filter.tags=@calculator`
+         - `clean verify -Dcucumber.filter.tags=@calculator`
    4. Add post build step for cucumber report with default options
    5. Optionally add email step to send jenkins result
