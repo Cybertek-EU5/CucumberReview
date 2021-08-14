@@ -22,7 +22,7 @@ import org.junit.runner.RunWith;
                 plugin = {"json:target/cucumber.json" ,
                            "html:target/default-html-reports"
                         } ,
-                tags = "@wip and not @calculator"   // "@login"  // which feature you want to run
+                tags = "@wip2 and not @calculator"   // "@login"  // which feature you want to run
                 )
 
 public class CukesRunner {
