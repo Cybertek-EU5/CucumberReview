@@ -20,9 +20,10 @@ import org.junit.runner.RunWith;
                 glue = "com/vytrack/step_definitions", // tell where the code is
                 dryRun = false ,   // check if we have missing steps or not
                 plugin = {"json:target/cucumber.json" ,
-                           "html:target/default-html-reports"
+                           "html:target/default-html-reports",
+                            "rerun:target/rerun.txt"
                         } ,
-                tags = "@wip2 and not @calculator"   // "@login"  // which feature you want to run
+                tags = "@wip3 and not @calculator"   // "@login"  // which feature you want to run
                 )
 
 public class CukesRunner {
