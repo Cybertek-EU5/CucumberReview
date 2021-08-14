@@ -1,29 +1,54 @@
-# Week 2 Review
-1. [EU5 Cucumber Prep](#eu5-cucumber-prep)
-    1. [Cucumber DDT](#cucumber-ddt)
-    2. [Cucumber Rerun Failed Scenario](#cucumber-rerun-failed-scenario)
-    3. [Cucumber Parallel Execution](#cucumber-parallel-execution)
-    4. [Filtering the test from the maven cmd](#filtering-the-test-from-the-maven-cmd)
-2. [EU5 Jenkins Prep](#eu5-jenkins-prep)
-    1. [Create AWS Account](#create-aws-account)
-    2. [Create EC2 Machine](#create-ec2-machine)
-    3. [Setup Jenkins](#setup-jenkins)
+# Table of Conetent
+1. [Table of Conetent](#table-of-conetent)
+2. [EU5 Cucumber Prep](#eu5-cucumber-prep)
+   1. [Cucumber DDT](#cucumber-ddt)
+   2. [Cucumber Rerun Failed Scenario](#cucumber-rerun-failed-scenario)
+   3. [Cucumber Parallel Execution](#cucumber-parallel-execution)
+   4. [Filtering the test from the maven cmd](#filtering-the-test-from-the-maven-cmd)
+3. [EU5 Jenkins Prep](#eu5-jenkins-prep)
+   1. [Create AWS Account](#create-aws-account)
+   2. [Create EC2 Machine](#create-ec2-machine)
+   3. [Setup Jenkins](#setup-jenkins)
 
 # EU5 Cucumber Prep
 
 ## Cucumber DDT
 - **Scenario outline with example**
- ```feature
-  Scenario Outline: Different user types
-  Given user is at login page 
-  When the user logged in as "<userType>"
-  Then the user should see "Dashboard" page
-  Examples:
-    | userType      |
-    | driver        |
-    | store manager |
-    | sales manager |
-  ```
+```feature
+@wip2
+Feature: Different type of user should be able to login
+
+#  Scenario: Driver should be able to login
+#  Scenario: SalesManager should be able to login
+#  Scenario: StoreManager should be able to login
+
+  Scenario Outline: User types <userType> should be able to login
+    Given the user is on the login page
+    When the user logged in as "<userType>"
+    Then the title should be "Dashboard"
+    Examples:
+      | userType      |
+      | driver        |
+      | storeManager |
+      | salesManager |
+```
+
+```feature
+  Scenario Outline:  Adding two numbers <num1> with <num2> and expect <expectedResult>
+    Given I have calculator app open
+    When I add <num1> to <num2>
+    Then I should get <expectedResult>
+     # option+command+L to format below on mac
+     # control+alt+L to format below on windows
+    Examples:
+      | num1 | num2 | expectedResult |
+      | 1    | 2    | 3              |
+      | 11   | 2    | 15             |
+      | 9    | 2    | 11             |
+      | 12   | 21   | 33             |
+      | 2    | 2    | 4              |
+```
+
 
 ## Cucumber Rerun Failed Scenario
 1. Add a line in cucumber option to specify how cucumber store failed steps in feature `rerun:target/rerun.txt` in `cucumberOptions`
@@ -72,7 +97,8 @@ public class FailedTestRunner {
 ```
 
 ## Cucumber Parallel Execution
-1. Update Driver for **Thread Safety**
+1. Open a different git branch for this to isolate what we did
+2. Update Driver for **Thread Safety**
 ```java
 public class Driver {
     private Driver() {
@@ -112,7 +138,7 @@ public class Driver {
 }
 ```
 
-2. **`pom.xml` update**
+3. **`pom.xml` update**
 ```xml
     <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -132,6 +158,8 @@ public class Driver {
 ---
 
 ## Filtering the test from the maven cmd
+
+Swith back to the `master` branch
 ```bash
 mvn test -Dcucumber.filter.tags=@yourTagHere
 ```
@@ -150,14 +178,14 @@ Follow instruction to create account just like facebook
 2. Launch new EC2 instance
 3. Search for `Cybertek Latest` AMI
 4. Add Security group to open ports:
-    1. **`8081`** for jenkins
-    2. **`8000`** for spartan practice app
-    3. **`7000`** for spartan practice app with auth
-    4. **`1521`** for database
-    5. **`1000`** for HR ORDS API
+   1. **`8081`** for jenkins
+   2. **`8000`** for spartan practice app
+   3. **`7000`** for spartan practice app with auth
+   4. **`1521`** for database
+   5. **`1000`** for HR ORDS API
 5. Click next till final step and wait until it's ready
 6. Use newly generated IP Adderss to access Jenkins
-    1. for example **`YourIP:8081`**
+   1. for example **`YourIP:8081`**
 
 
 ## Setup Jenkins
@@ -166,11 +194,11 @@ Follow instruction to create account just like facebook
 3. Select `Manage Plugins` to install `Cucumber Report`
 4. Optionally specify `JDK` - `Maven` - `git` localtion in global tools setting
 5. Create FreeStyle Jenkins Job
-    1. Specify project location
-    2. Specify run internal using cron expression
-    3. Add Build Step to run maven goal
-        1. **`clean verify -Dcucumber.filter.tags=@`**
-        2. add optional cucumber options if needed like
-            - `-Dcucumber.filter.tags=@calculator`
-    4. Add post build step for cucumber report with default options
-    5. Optionally add email step to send jenkins result
+   1. Specify project location
+   2. Specify run internal using cron expression
+   3. Add Build Step to run maven goal
+      1. **`clean verify -Dcucumber.filter.tags=@`**
+      2. add optional cucumber options if needed like
+         - `-Dcucumber.filter.tags=@calculator`
+   4. Add post build step for cucumber report with default options
+   5. Optionally add email step to send jenkins result
