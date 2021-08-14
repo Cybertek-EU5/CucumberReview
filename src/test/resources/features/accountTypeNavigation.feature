@@ -2,7 +2,8 @@
 Feature: Each account type should see different menu items when logging in
 
 Scenario Outline: Login with different accounts <userType>
-Given the user logged in as "<userType>"
+Given the user is on the login page
+And the user logged in as "<userType>"
 When the user navigates to "<tab>", "<module>"
 Then  the title should be "<title>"
 
