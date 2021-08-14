@@ -22,6 +22,7 @@ public class NavigationStepDefs {
     @Then("the title should be {string}")
     public void the_title_should_be(String expectedTitle) {
         // Write code here that turns the phrase above into concrete actions
+        BrowserUtils.waitFor(2);
         String actualTitle = Driver.get().getTitle();
         Assert.assertEquals(expectedTitle,actualTitle);
     }
