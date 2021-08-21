@@ -73,14 +73,16 @@ public class Driver {
                     } catch (MalformedURLException e) {
                         e.printStackTrace();
                     }
+                    break;
                 case "remote_firefox":
                     FirefoxOptions firefoxOptions = new FirefoxOptions();
-                    firefoxOptions.setCapability("platform", Platform.ANY);
+                    firefoxOptions.setCapability("platform", Platform.MAC);
                     try {
                         driverPool.set(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),firefoxOptions));
                     } catch (MalformedURLException e) {
                         e.printStackTrace();
                     }
+                    break;
             }
         }
         return driverPool.get();
