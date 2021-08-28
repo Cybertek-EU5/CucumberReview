@@ -1,5 +1,6 @@
 package com.vytrack.step_definitions;
 
+import com.vytrack.utilities.DBUtils;
 import com.vytrack.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -30,15 +31,18 @@ public class Hooks {
         Driver.closeDriver();
     }
 
-    @Before("@calculator")
-    public void setUpCalculator(){
-        System.out.println("Running @Before code only scenario with @calculator tag");
+    @Before("@db")
+    public void setUpConnection(){
+        System.out.println("CREATING CONNECTION...");
+        DBUtils.createConnection();
     }
 
-    @After("@calculator")
-    public void tearDownCalculator(){
-        System.out.println("Running @After code only scenario with @calculator tag");
+    @After("@db")
+    public void tearDownConnection(){
+        System.out.println("Closing Connection");
+        DBUtils.destroy();
     }
+
 
 
 
