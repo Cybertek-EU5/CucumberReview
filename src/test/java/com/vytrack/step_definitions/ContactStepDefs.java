@@ -1,5 +1,6 @@
 package com.vytrack.step_definitions;
 
+import com.vytrack.pages.ContactPage;
 import com.vytrack.pages.DashboardPage;
 import com.vytrack.pages.LoginPage;
 import com.vytrack.utilities.BrowserUtils;
@@ -34,6 +35,20 @@ public class ContactStepDefs {
         String password = userInfoMap.get("password") ;
 
         new LoginPage().login(username, password);
+
+    }
+
+    @When("the user clicks the {string} from contacts")
+    public void theUserClicksTheFromContacts(String email) {
+
+        ContactPage contactPage = new ContactPage();
+
+        contactPage.ClickEmailToSeeDetail(email);
+
+    }
+
+    @Then("the information should be same with database")
+    public void theInformationShouldBeSameWithDatabase() {
 
     }
 }
